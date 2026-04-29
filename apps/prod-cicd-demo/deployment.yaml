@@ -22,14 +22,14 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
         - name: app
-          image: 779599553744.dkr.ecr.ap-south-1.amazonaws.com/prod-cicd-demo:latest
+          image: 779599553744.dkr.ecr.ap-south-1.amazonaws.com/prod-cicd-demo:cd1fce633acc1e29f4bc8d243e183f7a60dcc059
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
               containerPort: 5000
           env:
             - name: APP_VERSION
-              value: "INITIAL"
+              value: "cd1fce6"
           readinessProbe:
             httpGet:
               path: /health
