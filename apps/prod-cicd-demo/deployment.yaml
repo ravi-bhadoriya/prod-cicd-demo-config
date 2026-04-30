@@ -22,7 +22,7 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
         - name: app
-          image: 779599553744.dkr.ecr.ap-south-1.amazonaws.com/prod-cicd-demo:6bf2e189883a9c544847ad57401604eb93f7b007
+          image: 779599553744.dkr.ecr.ap-south-1.amazonaws.com/prod-cicd-demo:6bf2e18
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
