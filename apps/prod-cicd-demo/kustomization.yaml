@@ -1,7 +1,9 @@
 resources:
   - namespace.yaml
   - configmap.yaml
-  - deployment.yaml
+  - deployment-blue.yaml
+  - deployment-green.yaml
   - service.yaml
   - ingress.yaml
-  - hpa.yaml
+
+  # - hpa.yaml

@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: prod-cicd-demo-green
+  namespace: prod-demo
+  
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: prod-cicd-demo
+      version: green
+
+  template:
+    metadata:
+      labels:
+        app: prod-cicd-demo
+        version: green
+        
+    spec:
+      containers:
+      - name: app
+        image: 779599553744.dkr.ecr.ap-south-1.amazonaws.com/prod-cicd-demo:80274612563efa5cf2a6c5dd79646798b5a421a1
+        imagePullPolicy: Always
+
+        env:
+        - name: APP_VERSION
+          value: "green-v2"
+
+        envFrom:
+        - configMapRef:
+            name: app-config
+
+        ports:
+        - containerPort: 5000
+
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 5000
+          initialDelaySeconds: 15
+          periodSeconds: 20
+
+        resources:
+          requests:
+            cpu: "200m"
+            memory: "256Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
