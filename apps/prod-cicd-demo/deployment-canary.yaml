@@ -7,11 +7,10 @@ metadata:
   
 spec:
   replicas: 2
-
   selector:
     matchLabels:
       app: prod-cicd-demo
-      version: canary
+      version: canary-v3
 
   template:
     metadata:
@@ -27,7 +26,7 @@ spec:
 
         env:
         - name: APP_VERSION
-          value: "green-v2"
+          value: "canary-v3"
 
         envFrom:
         - configMapRef:
