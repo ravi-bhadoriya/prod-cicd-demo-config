@@ -6,11 +6,10 @@ metadata:
   namespace: prod-demo
 
 spec:
+  type: ClusterIP
   selector:
     app: prod-cicd-demo
 
   ports:
   - port: 80
     targetPort: 5000
-
-type: ClusterIP
