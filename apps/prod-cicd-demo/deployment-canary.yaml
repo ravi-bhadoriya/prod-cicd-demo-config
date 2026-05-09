@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: xyz.dkr.ecr.ap-south-1.amazonaws.com/prod-cicd-demo:80274612563efa5cf2a6c5dd79646798b5a421a1
+        image: 779599553744.dkr.ecr.ap-south-1.amazonaws.com/prod-cicd-demo:80274612563efa5c000000000000
         imagePullPolicy: Always
 
         env:
