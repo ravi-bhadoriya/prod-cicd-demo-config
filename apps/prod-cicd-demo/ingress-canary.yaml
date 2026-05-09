@@ -5,8 +5,8 @@ metadata:
   name: prod-cicd-demo-canary
   namespace: prod-demo
   annotations:
-    nginx.ingress.kubernetes.io/canary:"true"
-    nginx.ingress.kubernetes.io/canary-weight:"10"
+    nginx.ingress.kubernetes.io/canary: "true"
+    nginx.ingress.kubernetes.io/canary-weight: "10"
 
 spec:
   ingressClassName: nginx
