@@ -4,15 +4,15 @@ kind: Deployment
 metadata:
   name: prod-cicd-demo
   namespace: prod-demo
-
+  
 spec:
   replicas: 2
 
   strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 1
-      maxSurge: 1
+    type: Recreate
+    # rollingUpdate:
+    #   maxUnavailable: 1
+    #   maxSurge: 1
 
   selector:
     matchLabels:
